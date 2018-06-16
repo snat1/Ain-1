@@ -23,9 +23,16 @@ LY="\e[0;33m"
 #end
 EN="\e[0m"
 #---------------KEYS-----------------
-K="Press "$WH"any key$EN to start..."
-K1="Press "$WH"any key$EN to continue..."
-K2="Press "$WH"any key$EN to go back..."
+function K {
+echo -e "Press "$WH"any key$"EN" to start..."
+}
+function K1 {
+echo -e "Press "$WH"any key"$EN" to continue..."
+}
+function K2
+{
+echo -e "Press "$WH"any key"$EN" to go back..."
+}
 #--------------Any-key----------------
 R1="read -n 1"
 #---------------YesOrNo---------------
@@ -86,8 +93,9 @@ function OP
 	echo -e $WH"Do you want to use anonsurf to start using it with the tool?-[y/n]"
 	echo
 	read -p "@ain:~#" resp
-	[ "$resp" = "y" ]; then  anonsurf start;clear
-	if [ "$resp" = "n" ]; then clear 
+	[ "$resp" = "y" ];anonsurf start;clear
+	if [ "$resp" = "n" ]; then clear
+fi 
 }
 function TT
 {
@@ -146,7 +154,7 @@ dependences
 K
 clear
 sleep 0.50
-banner
+B
 K1
 OP
 sleep 0.25
